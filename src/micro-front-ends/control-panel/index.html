@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>Micro front end - Control panel</title>
+  </head>
+  <body>
+    <h2>Control panel</h2>
+    <input type="text" id="entity-id" />
+    <button id="set-entity-id-button">Set Business Entity ID</button>
+    <script type="text/javascript">
+      const button = document.getElementById("set-entity-id-button");
+      button.addEventListener("click", () => {
+        const id = document.getElementById("entity-id").value;
+        parent.postMessage(id, "http://localhost:3000");
+      });
+    </script>
+  </body>
+</html>

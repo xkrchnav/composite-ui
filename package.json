@@ -1,0 +1,37 @@
+{
+  "name": "composite-ui",
+  "version": "1.0.0",
+  "description": "Micro frontends demonstration using iFrames",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm:start-container\" \"npm:start-control-panel\" \"npm:start-papermill-overview\" \"npm:start-logistic-reports\"",
+    "start-container": "webpack serve --port 3000",
+    "start-control-panel": "node ./src/micro-front-ends/control-panel/server.js",
+    "start-papermill-overview": "node ./src/micro-front-ends/papermill-overview/server.js",
+    "start-logistic-reports": "node ./src/micro-front-ends/logistic-reports/server.js",
+    "prettier": "prettier --write ."
+  },
+  "author": "Jozef Mera",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/xkrchnav/composite-ui.git"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "concurrently": "^6.4.0",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "prettier": "^2.5.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

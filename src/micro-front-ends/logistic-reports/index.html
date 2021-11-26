@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>Micro front end - Logistic reports</title>
+  </head>
+  <body>
+    <h2>Logistic reports</h2>
+    <h3>Business entity id: <strong id="entity-id"></strong></h3>
+    <script type="text/javascript">
+      window.addEventListener("message", (event) => {
+        if (event.origin !== "http://localhost:3000") {
+          return;
+        }
+
+        const entityId = document.getElementById("entity-id");
+        entityId.innerText = event.data;
+      });
+    </script>
+  </body>
+</html>
